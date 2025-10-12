@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "mailchimp": {
+      "command": "npx",
+      "args": [
+        "@bryangsmith/mailchimp-mcp-server"
+      ],
+      "env": {
+        "MAILCHIMP_API_KEY": "${MAILCHIMP_API_KEY}",
+        "MAILCHIMP_SERVER_PREFIX": "${MAILCHIMP_SERVER_PREFIX}"
+      }
+    },
+    "cloudinary": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cloudinary/asset-management"
+      ],
+      "env": {
+        "CLOUDINARY_CLOUD_NAME": "${CLOUDINARY_CLOUD_NAME}",
+        "CLOUDINARY_API_KEY": "${CLOUDINARY_API_KEY}",
+        "CLOUDINARY_API_SECRET": "${CLOUDINARY_API_SECRET}"
+      }
+    },
+    "twitter": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mbelinky/x-mcp-server"
+      ],
+      "env": {
+        "API_KEY": "${TWITTER_API_KEY}",
+        "API_SECRET_KEY": "${TWITTER_API_SECRET}",
+        "ACCESS_TOKEN": "${TWITTER_ACCESS_TOKEN}",
+        "ACCESS_TOKEN_SECRET": "${TWITTER_ACCESS_TOKEN_SECRET}"
+      }
+    }
+  }
+}

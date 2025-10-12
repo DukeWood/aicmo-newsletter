@@ -1,0 +1,16 @@
+{
+  "main": {
+    "newsletter-header.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299696/newsletter/issue-01/newsletter-header.png",
+    "ai-growth-stats.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299697/newsletter/issue-01/ai-growth-stats.png",
+    "traditional-decline.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299699/newsletter/issue-01/traditional-decline.png",
+    "case-study-emma.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299701/newsletter/issue-01/case-study-emma.png",
+    "cta-button-geo-audit.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299702/newsletter/issue-01/cta-button-geo-audit.png"
+  },
+  "icons": {
+    "youtube-icon.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299703/newsletter/issue-01/icons/youtube-icon.png",
+    "x-icon.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299704/newsletter/issue-01/icons/x-icon.png",
+    "linkedin-icon.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299705/newsletter/issue-01/icons/linkedin-icon.png",
+    "whatsapp-icon.jpg": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299707/newsletter/issue-01/icons/whatsapp-icon.png",
+    "discord-icon.png": "https://res.cloudinary.com/dmaw7i3gz/image/upload/v1760299718/newsletter/issue-01/icons/discord-icon.png"
+  }
+}

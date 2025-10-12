@@ -1,0 +1,42 @@
+{
+  "name": "aicmo-newsletter-automation",
+  "version": "1.0.0",
+  "description": "AI-powered newsletter automation system for aiCMO using Mailchimp API",
+  "main": "scripts/newsletter/orchestrate.js",
+  "scripts": {
+    "setup": "npm install && node scripts/newsletter/test-mcp-connection.js",
+    "test:api": "node scripts/newsletter/test-mcp-connection.js",
+    "test:mcp": "node scripts/newsletter/test-mcp-connection.js",
+    "test:newsletter": "npm run test:api",
+    "publish:newsletter": "node scripts/newsletter/orchestrate.js publish",
+    "fetch:metrics": "node scripts/newsletter/fetch-metrics.js",
+    "dashboard": "node dashboards/newsletter/generate-dashboard.js"
+  },
+  "keywords": [
+    "newsletter",
+    "mailchimp",
+    "mcp",
+    "automation",
+    "ai-marketing"
+  ],
+  "author": "aiCMO Team",
+  "license": "MIT",
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "axios": "^1.6.5",
+    "cheerio": "^1.0.0-rc.12",
+    "cloudinary": "^2.7.0",
+    "date-fns": "^3.0.6",
+    "dotenv": "^16.4.5",
+    "markdown-it": "^14.0.0",
+    "yaml-front-matter": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
