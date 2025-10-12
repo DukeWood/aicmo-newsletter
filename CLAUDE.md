@@ -166,8 +166,10 @@ aicmo_cc/
 │   └── newsletter/         # Newsletter automation
 │       ├── send-test-email.js         # Send test emails via Mailchimp
 │       └── upload-to-cloudinary.js    # Upload images to Cloudinary CDN
+├── .claude/
+│   ├── agents/             # Agent definitions
+│   └── mcp-config.json     # MCP server configuration (Mailchimp, Cloudinary, Twitter)
 ├── .env                     # Environment variables (Mailchimp, Cloudinary, etc.)
-├── mcp-config.json         # MCP server configuration (Mailchimp, Cloudinary)
 └── CLAUDE.md               # This file
 ```
 
@@ -342,7 +344,7 @@ The script:
 - **Mailchimp** (`@bryangsmith/mailchimp-mcp-server`) - Email campaign management
 - **Cloudinary** (`@cloudinary/asset-management`) - Image hosting and optimization
 
-**Configuration:** `mcp-config.json`
+**Configuration:** `.claude/mcp-config.json`
 ```json
 {
   "mcpServers": {
@@ -452,7 +454,7 @@ TWITTER_ACCESS_TOKEN=your_access_token
 TWITTER_ACCESS_TOKEN_SECRET=your_access_token_secret
 ```
 
-**MCP Configuration:** (`mcp-config.json`)
+**MCP Configuration:** (`.claude/mcp-config.json`)
 ```json
 {
   "mcpServers": {
