@@ -420,7 +420,11 @@ This repository includes automated social media posting for Twitter/X and Linked
 **Location:** `scripts/social/`
 
 Social media automation includes:
-- **`post-to-twitter.js`** - Post tweets and threads to Twitter/X
+
+- **`post-tweet-direct.js`** - Direct Twitter API v2 posting (recommended)
+- **`post-thread-direct.js`** - Direct Twitter thread posting
+- **`tweet.js`** - Convenience wrapper for quick posting
+- **`post-to-twitter.js`** - MCP-based tweets and threads (legacy)
 - **`cross-post-newsletter.js`** - Cross-post newsletter content to multiple platforms
 
 ### Social Media Workflow
@@ -499,9 +503,69 @@ node scripts/social/cross-post-newsletter.js campaigns/weekly-newsletter/issue-0
 - Generates LinkedIn post (professional format)
 - Saves results to JSON file
 
-#### 4. Custom Posting
+#### 4. Direct Twitter Posting (Recommended)
 
-**Post Single Tweet:**
+**Quick Single Tweet (Easiest):**
+```bash
+node scripts/social/tweet.js "Your tweet text here"
+```
+
+**Single Tweet (Full Script):**
+```bash
+node scripts/social/post-tweet-direct.js "Your tweet text here"
+```
+
+**Post a Thread:**
+
+First, create a JSON file with your tweets:
+```json
+{
+  "tweets": [
+    "First tweet in thread",
+    "Second tweet in thread",
+    "Third tweet in thread"
+  ]
+}
+```
+
+Then post the thread:
+```bash
+node scripts/social/post-thread-direct.js thread.json
+```
+
+**Benefits:**
+- Posts immediately via Twitter API v2
+- Uses OAuth 1.0a authentication
+- No MCP server required
+- Returns tweet ID and URL for each tweet
+- Threads automatically connect tweets with reply relationships
+- 2-second delay between thread tweets
+
+**Example Single Tweet:**
+```bash
+node scripts/social/tweet.js "Test post from aiCMO! 🚀 #AIMarketing"
+```
+
+**Success Output:**
+```text
+✅ Tweet posted successfully!
+📊 Tweet ID: 1977514819096867226
+🔗 Tweet URL: https://twitter.com/user/status/1977514819096867226
+```
+
+**Example Thread Output:**
+```text
+🧵 Posting Twitter thread (4 tweets)...
+✅ Tweet 1 posted successfully!
+✅ Tweet 2 posted successfully!
+✅ Tweet 3 posted successfully!
+✅ Tweet 4 posted successfully!
+🎉 Thread posted successfully!
+```
+
+#### 5. Legacy MCP-Based Posting
+
+**Post Single Tweet (via MCP):**
 ```bash
 node scripts/social/post-to-twitter.js tweet "Your tweet text here"
 ```
@@ -525,6 +589,8 @@ node scripts/social/post-to-twitter.js thread thread.json
 ```bash
 node scripts/social/post-to-twitter.js newsletter campaigns/weekly-newsletter/issue-01/issue-01-newsletter.md
 ```
+
+**Note:** MCP-based methods require MCP server running. Use direct posting method for simpler workflow.
 
 ### Social Media Best Practices
 
