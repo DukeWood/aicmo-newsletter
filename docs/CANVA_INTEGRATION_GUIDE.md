@@ -10,9 +10,10 @@
 2. [Setup & Authentication](#setup--authentication)
 3. [Working with Designs](#working-with-designs)
 4. [Complete Workflow Examples](#complete-workflow-examples)
-5. [Advanced: Production Deployment](#advanced-production-deployment)
-6. [Troubleshooting & FAQ](#troubleshooting--faq)
-7. [Reference](#reference)
+5. [AI Image Generation Workflows](#ai-image-generation-workflows)
+6. [Advanced: Production Deployment](#advanced-production-deployment)
+7. [Troubleshooting & FAQ](#troubleshooting--faq)
+8. [Reference](#reference)
 
 ---
 
@@ -315,6 +316,186 @@ node scripts/social/post-tweet-with-image.js "Case study 📊" ./temp/DAGpost002
 ```
 
 **Time saved:** ~30 minutes per week
+
+---
+
+## AI Image Generation Workflows
+
+### Overview: Free AI-Powered Image Generation
+
+**New capability:** Generate professional images using free AI models through Hugging Face MCP, eliminating the need for manual design work for simple graphics.
+
+**Available methods:**
+1. **Hugging Face MCP** (FREE) - AI image generation via Claude Code
+2. **Canva-First** (Traditional) - Manual design in Canva UI
+3. **Hybrid** (Best of Both) - AI base + Canva polish
+
+### Method 1: AI-First Workflow (Fastest)
+
+**Use for:** Quick social posts, event flyers, simple graphics
+
+**Step 1: Enable Hugging Face MCP**
+
+See `scripts/ai-image/HUGGINGFACE_MCP_SETUP.md` for complete setup:
+1. Create free Hugging Face account at https://huggingface.co
+2. Enable MCP tools at https://huggingface.co/mcp/settings:
+   - `mcp-tools/FLUX.1-Krea-dev` (realistic images)
+   - `mcp-tools/qwen-image` (text rendering)
+3. Restart Claude Code to connect
+
+**Step 2: Generate Image with Claude Code**
+
+Simply ask Claude Code to generate an image:
+```
+Generate an image: Modern event flyer for AI Meets Web3,
+professional design, tech theme with neural network graphics,
+navy blue and crimson red colors, clean layout,
+high quality, 1200x675px for Twitter
+```
+
+Claude Code will:
+1. Connect to Hugging Face MCP
+2. Use FLUX.1 Krea model
+3. Generate and save image to `./temp/generated/`
+4. Return the file path
+
+**Step 3: Post to Twitter**
+```bash
+node scripts/social/post-tweet-with-image.js \
+  "Your tweet text" \
+  ./temp/generated/ai-image.png
+```
+
+**Time:** ~1 minute
+**Cost:** FREE
+**Quality:** High (AI-generated, photorealistic)
+
+**Limitations:**
+- Text rendering may be imperfect
+- ~50-100 images per day limit (free tier)
+- Generation time: 10-30 seconds per image
+
+---
+
+### Method 2: Canva-First Workflow (Highest Quality)
+
+**Use for:** Brand-perfect content, complex designs, precise text placement
+
+**The traditional workflow covered earlier in this guide:**
+
+```bash
+# 1. Design in Canva UI
+Open Canva → Create design → Save
+
+# 2. Export via API
+node scripts/canva/export-design.js DAG1wokOYPs png ./temp/image.png
+
+# 3. Post to Twitter
+node scripts/social/post-tweet-with-image.js "Tweet text" ./temp/image.png
+```
+
+**Time:** 5-10 minutes
+**Cost:** FREE (Canva Pro subscription)
+**Quality:** Highest (full brand control)
+
+---
+
+### Method 3: Hybrid Workflow (Best of Both)
+
+**Use for:** Professional results with AI speed
+
+**Combines AI generation + Canva polish for optimal results:**
+
+**Step 1: Generate base image with AI**
+```
+Generate image: Tech event flyer base,
+modern minimalist background with neural network pattern,
+navy blue and crimson tones, professional style,
+1200x675px, leave space for text overlay
+```
+
+**Step 2: Import to Canva for branding**
+1. Download generated image
+2. Open Canva → Upload → Create design with image as background
+3. Add:
+   - Brand logos
+   - Precise text with brand fonts
+   - Event details
+   - Call-to-action buttons
+4. Save design (copy Design ID)
+
+**Step 3: Export via API**
+```bash
+node scripts/canva/export-design.js DAGxyz123 png ./temp/final.png
+```
+
+**Step 4: Post to Twitter**
+```bash
+node scripts/social/post-tweet-with-image.js \
+  "Event announcement 🎉" \
+  ./temp/final.png
+```
+
+**Time:** 3-5 minutes
+**Cost:** FREE
+**Quality:** Highest (AI speed + brand perfection)
+
+---
+
+### All-in-One Script (Coming Soon)
+
+**One command to generate and post:**
+```bash
+node scripts/ai-image/generate-and-post.js \
+  "AI Meets Web3 event flyer with modern tech design" \
+  "🤖 Event announcement! #AIMarketing"
+```
+
+This will:
+1. Generate image via Hugging Face MCP
+2. Save to `./temp/generated/`
+3. Post to Twitter automatically
+
+**Status:** Script in development (see `scripts/ai-image/`)
+
+---
+
+### Workflow Comparison
+
+| Workflow | Time | Cost | Quality | Best For |
+|----------|------|------|---------|----------|
+| **AI-First** | ~1 min | FREE | High | Quick posts, simple graphics |
+| **Canva-First** | 5-10 min | FREE* | Highest | Brand-perfect, complex designs |
+| **Hybrid** | 3-5 min | FREE* | Highest | Professional + fast |
+
+*Requires Canva Pro subscription
+
+### AI Image Generation Tips
+
+**For better results:**
+- ✅ Be specific: "Modern tech event flyer" vs "flyer"
+- ✅ Include style: "photorealistic", "minimalist", "professional"
+- ✅ Specify colors: Use hex codes (#012169) or names
+- ✅ State dimensions: "1200x675px", "square", "banner"
+- ✅ Add quality terms: "high quality", "detailed", "sharp"
+
+**Avoid:**
+- ❌ Vague prompts: "nice image" (too general)
+- ❌ Overloading: Too many elements in one prompt
+- ❌ Perfect text expectations: Use Canva for text overlay
+- ❌ Copyrighted terms: Brand names, characters
+
+**Model selection (automatic):**
+- **FLUX.1 Krea**: Realistic photos, event flyers, social graphics
+- **Qwen-Image**: Images with text, diagrams, infographics
+
+### Complete Setup Guide
+
+**See:** `scripts/ai-image/HUGGINGFACE_MCP_SETUP.md` for detailed setup instructions including:
+- Account creation
+- Tool enabling
+- Usage examples
+- Troubleshooting
 
 ---
 
