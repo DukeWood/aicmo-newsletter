@@ -208,7 +208,8 @@ The integration requires these scopes:
 ## Useful Links
 
 - **Developer Portal:** https://www.canva.com/developers/
-- **Full Setup Guide:** See [CANVA_SETUP.md](../../CANVA_SETUP.md) in project root
+- **Complete Integration Guide:** See [docs/CANVA_INTEGRATION_GUIDE.md](../../docs/CANVA_INTEGRATION_GUIDE.md)
+- **Quick Reference:** See [docs/CANVA_QUICK_REFERENCE.md](../../docs/CANVA_QUICK_REFERENCE.md)
 - **API Docs:** https://www.canva.dev/docs/connect/
 - **API Status:** https://status.canva.com
 
@@ -255,14 +256,21 @@ const designs = await listDesigns(token, 10);
 designs.forEach(d => console.log(`${d.title} - ${d.id}`));
 ```
 
+## Documentation
+
+**For complete documentation, see:**
+- **[Canva Integration Guide](../../docs/CANVA_INTEGRATION_GUIDE.md)** - Full setup, workflows, and troubleshooting
+- **[Canva Quick Reference](../../docs/CANVA_QUICK_REFERENCE.md)** - One-page command cheat sheet
+
 ## Next Steps
 
-1. ✅ Complete setup: Follow [CANVA_SETUP.md](../../CANVA_SETUP.md)
+1. ✅ Complete setup: Follow [Canva Integration Guide](../../docs/CANVA_INTEGRATION_GUIDE.md)
 2. ✅ Run authentication: `node scripts/canva/canva-oauth.js`
-3. ✅ Test integration: Generate images for Issue #1
-4. ✅ Create design templates in Canva UI
-5. ✅ Integrate with newsletter workflow
+3. ✅ Export designs: `node scripts/canva/export-design.js <DESIGN_ID>`
+4. ✅ Post to Twitter: `node scripts/social/post-tweet-with-image.js "text" ./image.png`
+5. ✅ Create workflow automation
 
 ---
 
-**Last Updated:** 2025-10-13
+**Last Updated:** 2025-10-14
+**Documentation:** `docs/CANVA_INTEGRATION_GUIDE.md`

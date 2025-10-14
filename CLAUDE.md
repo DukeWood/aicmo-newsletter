@@ -664,3 +664,249 @@ node scripts/social/post-to-twitter.js newsletter campaigns/weekly-newsletter/is
    - Add scheduling via cron jobs
    - Integrate additional platforms
    - Build engagement monitoring dashboards
+
+---
+
+## Canva Design Integration System
+
+This repository includes complete Canva Connect API integration for automated design export and social media posting.
+
+### Canva Architecture
+
+**Location:** `scripts/canva/` & `docs/`
+
+Canva integration includes:
+
+- **`scripts/canva/canva-oauth.js`** - OAuth 2.0 authentication with PKCE
+- **`scripts/canva/export-design.js`** - Export designs by ID to PNG/JPG
+- **`scripts/newsletter/generate-images-canva.js`** - Newsletter image workflow
+- **`server/oauth-server.js`** - Production OAuth server (Enterprise)
+- **`docs/CANVA_INTEGRATION_GUIDE.md`** - Complete integration guide
+- **`docs/CANVA_QUICK_REFERENCE.md`** - One-page cheat sheet
+
+### Canva Workflow (Design → Export → Post)
+
+#### 1. What Canva Pro Can Do
+
+**✅ Capabilities:**
+- Design in Canva UI with full creative control
+- Export designs programmatically via API
+- Automate social media posting with images
+- Generate newsletter images
+
+**❌ Limitations (Requires Enterprise):**
+- Autofill API (programmatic text/image placement)
+- Brand templates API (bulk generation with data)
+- Advanced template automation
+
+#### 2. Setup & Authentication
+
+**Get Canva Credentials:**
+1. Go to https://www.canva.com/developers/
+2. Create integration (Private recommended)
+3. Copy Client ID and Client Secret
+4. Add redirect URL: `http://127.0.0.1:3001/oauth/redirect`
+5. Enable scopes: design:content:read, design:content:write, design:meta:read, asset:read, asset:write, profile:read
+
+**Authenticate:**
+```bash
+node scripts/canva/canva-oauth.js
+```
+
+**What happens:**
+- Opens browser to Canva authorization
+- You click "Authorize"
+- Tokens saved to `.canva-tokens.json`
+- Auto-refreshes when expired
+
+#### 3. Design in Canva UI
+
+**Create designs:**
+1. Go to https://www.canva.com
+2. Create new design with optimal sizes:
+   - **Twitter:** 1200×675px (16:9)
+   - **LinkedIn:** 1200×627px (1.91:1)
+   - **Instagram:** 1080×1080px (1:1)
+   - **Newsletter Header:** 600×200px (3:1)
+3. Design with brand colors:
+   - Crimson Red: `#C8102E`
+   - Navy Blue: `#012169`
+4. Save (auto-saved by Canva)
+
+**Get Design ID:**
+- Open design in Canva
+- Copy ID from URL: `https://www.canva.com/design/[DESIGN_ID]/view`
+- Example: `DAG1wokOYPs`
+
+#### 4. Export Designs via API
+
+**Basic export:**
+```bash
+node scripts/canva/export-design.js <DESIGN_ID>
+```
+
+**Export with options:**
+```bash
+node scripts/canva/export-design.js <DESIGN_ID> png ./temp/image.png
+```
+
+**What happens:**
+- Authenticates (uses cached tokens)
+- Starts async export job via Canva API
+- Waits for completion (~10-30 seconds)
+- Downloads image to specified path
+
+**Supported formats:**
+- `png` - Best for graphics with transparency
+- `jpg` - Smaller file size
+- `pdf` - Print quality
+
+#### 5. Post to Social Media
+
+**Twitter with image:**
+```bash
+node scripts/social/post-tweet-with-image.js "Tweet text" ./temp/image.png
+```
+
+**Combined workflow (export + post):**
+```bash
+node scripts/canva/export-design.js DAG1wokOYPs png ./temp/event.png && \
+node scripts/social/post-tweet-with-image.js "Event announcement 🎉" ./temp/event.png
+```
+
+### Complete Workflow Examples
+
+#### Example 1: Event Flyer → Twitter
+
+```bash
+# 1. Design in Canva UI (1200×675px)
+#    - Add event details
+#    - Save design
+#    - Copy Design ID: DAG1wokOYPs
+
+# 2. Export & post (automated)
+node scripts/canva/export-design.js DAG1wokOYPs png ./temp/event.png
+node scripts/social/post-tweet-with-image.js \
+  "🤖 AI Meets Web3 in London!
+
+  FREE event @ London Web3 Week
+  📍 Wapping Tavern, London
+  📅 Oct 21, 6:45-8:30pm
+
+  #LondonWeb3Week #AIMarketing" \
+  ./temp/event.png
+```
+
+#### Example 2: Newsletter Header
+
+```bash
+# Export latest header design
+node scripts/canva/export-design.js DAGheader png \
+  ./campaigns/weekly-newsletter/issue-02/assets/header.png
+
+# Upload to Cloudinary
+node scripts/newsletter/upload-to-cloudinary.js
+
+# Send newsletter
+node scripts/newsletter/send-test-email.js \
+  campaigns/weekly-newsletter/issue-02/issue-02-newsletter.md \
+  your-email@example.com
+```
+
+#### Example 3: Batch Social Posts
+
+```bash
+# Export multiple designs
+for id in DAG001 DAG002 DAG003; do
+  node scripts/canva/export-design.js $id png ./temp/${id}.png
+done
+
+# Post with scheduling
+node scripts/social/post-tweet-with-image.js "Post 1" ./temp/DAG001.png
+node scripts/social/post-tweet-with-image.js "Post 2" ./temp/DAG002.png
+node scripts/social/post-tweet-with-image.js "Post 3" ./temp/DAG003.png
+```
+
+### Canva Configuration
+
+**Environment Variables:**
+```bash
+# Canva API
+CANVA_CLIENT_ID=OC-AZndiQDmxUJT
+CANVA_CLIENT_SECRET=your-secret-here
+CANVA_REDIRECT_URI=http://127.0.0.1:3001/oauth/redirect
+```
+
+**MCP Configuration:** `.claude/mcp-config.json`
+```json
+{
+  "mcpServers": {
+    "canva": {
+      "command": "npx",
+      "args": ["-y", "@canva/cli@latest", "mcp"]
+    }
+  }
+}
+```
+
+**Canva MCP Server:**
+- Provides Canva documentation and development assistance
+- No authentication required (documentation access only)
+- Use for API guidance and troubleshooting
+
+### Account Tier Comparison
+
+| Feature | Free | Pro | Enterprise |
+|---------|------|-----|------------|
+| UI Design | ✅ | ✅ | ✅ |
+| API Export | ✅ | ✅ | ✅ |
+| Create via API | ✅ | ✅ | ✅ |
+| Autofill API | ❌ | ❌ | ✅ |
+| Brand Templates API | ❌ | ❌ | ✅ |
+
+**This project works with:** All tiers (tested with Canva Pro)
+
+### Troubleshooting
+
+**"Token expired"**
+```bash
+node scripts/canva/canva-oauth.js
+```
+
+**"Design not found"**
+- Verify Design ID is correct (case-sensitive)
+- Ensure design is in your Canva account
+- Check you're logged in to correct account
+
+**"Export timeout"**
+- Normal for large designs (wait up to 60 seconds)
+- Check Canva API status: https://status.canva.com
+- Retry if it fails
+
+**"Missing Canva credentials"**
+- Check `.env` file has `CANVA_CLIENT_ID` and `CANVA_CLIENT_SECRET`
+- Verify no typos in variable names
+- Restart terminal to reload environment
+
+### Documentation
+
+**Complete guide:** See `docs/CANVA_INTEGRATION_GUIDE.md` for:
+- Detailed setup instructions
+- OAuth authentication guide
+- Design best practices
+- Image size recommendations
+- Troubleshooting & FAQ
+- API limitations by account tier
+
+**Quick reference:** See `docs/CANVA_QUICK_REFERENCE.md` for:
+- One-page command cheat sheet
+- Common workflows
+- Quick troubleshooting
+
+### Useful Links
+
+- **Canva Developer Portal:** https://www.canva.com/developers/
+- **API Documentation:** https://www.canva.dev/docs/connect/
+- **API Status:** https://status.canva.com
+- **Integration Guide:** `docs/CANVA_INTEGRATION_GUIDE.md`
+- **Quick Reference:** `docs/CANVA_QUICK_REFERENCE.md`
