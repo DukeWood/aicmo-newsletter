@@ -1,2 +1,6 @@
 .env
 node_modules
+
+# Canva OAuth tokens (contains sensitive access tokens)
+.canva-tokens.json
+.vercel

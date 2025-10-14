@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "aicmo-canva-oauth",
+  "builds": [
+    {
+      "src": "server/oauth-server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server/oauth-server.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
