@@ -34,6 +34,14 @@
         "ACCESS_TOKEN": "${TWITTER_ACCESS_TOKEN}",
         "ACCESS_TOKEN_SECRET": "${TWITTER_ACCESS_TOKEN_SECRET}"
       }
+    },
+    "canva": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@canva/cli@latest",
+        "mcp"
+      ]
     }
   }
 }
