@@ -436,10 +436,11 @@ Social media automation includes:
 - OAuth 1.0a authentication
 - Supports tweets, threads, and media
 
-**LinkedIn (Pending):**
-- Requires LinkedIn Community Management API approval
-- Generates LinkedIn-formatted posts
-- Manual posting currently required
+**LinkedIn (Active - Development Tier):**
+- ✅ OAuth 2.0 authentication complete
+- ✅ Dry-run mode generating LinkedIn posts
+- ⏳ Standard Tier approval pending (required for live posting)
+- Organization ID: 108297743
 
 **Setup Guide:** See `SOCIAL_MEDIA_SETUP.md` for complete setup instructions
 
@@ -476,11 +477,45 @@ TWITTER_ACCESS_TOKEN_SECRET=your_access_token_secret
 }
 ```
 
-#### 3. Cross-Posting Newsletters
+#### 3. LinkedIn Configuration
+
+**Get Credentials:**
+1. Create app at https://www.linkedin.com/developers/
+2. Apply for Community Management API access
+3. Get Development Tier approval (immediate)
+4. Request Standard Tier for live posting (1-3 business days)
+
+**Environment Variables:**
+```bash
+LINKEDIN_CLIENT_ID=your_client_id_here
+LINKEDIN_CLIENT_SECRET=your_client_secret_here
+LINKEDIN_REDIRECT_URI=http://localhost:3001/oauth/redirect
+LINKEDIN_ORGANIZATION_ID=108297743
+```
+
+**OAuth Authentication:**
+```bash
+# One-time setup (60-day tokens)
+node scripts/social/linkedin-oauth.cjs
+```
+
+**Scopes Required:**
+- `w_organization_social_feed` - Post to organization pages
+- `r_organization_social_feed` - Read organization posts/analytics
+
+**Current Status:**
+- Development Tier: ✅ Active
+- Standard Tier: ⏳ Pending (required for live posting)
+- OAuth: ✅ Complete
+- Dry-run mode: ✅ Working
+
+**Documentation:** See `docs/LINKEDIN_INTEGRATION_GUIDE.md` for complete setup guide
+
+#### 4. Cross-Posting Newsletters
 
 **Preview Posts (Dry Run):**
 ```bash
-node scripts/social/cross-post-newsletter.js --dry-run
+node scripts/social/cross-post-newsletter.cjs --dry-run
 ```
 
 **Post to Twitter:**
@@ -490,7 +525,12 @@ node scripts/social/cross-post-newsletter.js --twitter
 
 **Post to All Platforms:**
 ```bash
-node scripts/social/cross-post-newsletter.js campaigns/weekly-newsletter/issue-01/issue-01-newsletter.md
+node scripts/social/cross-post-newsletter.cjs campaigns/weekly-newsletter/issue-01/issue-01-newsletter.md
+```
+
+**LinkedIn Only (Dry-Run):**
+```bash
+node scripts/social/cross-post-newsletter.cjs campaigns/weekly-newsletter/issue-01/issue-01-newsletter.md --linkedin --dry-run
 ```
 
 **What It Does:**
@@ -622,8 +662,8 @@ node scripts/social/post-to-twitter.js newsletter campaigns/weekly-newsletter/is
 - Optimize posting times
 
 **Sophie's Platforms:**
-- Twitter/X ✅ (automated via MCP)
-- LinkedIn ⏳ (pending API approval)
+- Twitter/X ✅ (automated - live posting active)
+- LinkedIn ✅ (automated - dry-run active, live posting pending Standard Tier)
 - Facebook, Instagram, TikTok (manual posting)
 - Discord, WhatsApp, Reddit (community management)
 
@@ -640,9 +680,11 @@ node scripts/social/post-to-twitter.js newsletter campaigns/weekly-newsletter/is
 - Check that API credentials don't have placeholder values
 
 **LinkedIn:**
-- Status: Requires API approval (can take 1-2 weeks)
-- Current: Generates posts for manual copying
-- Future: Full automation once API approved
+- Status: Development Tier active, Standard Tier pending
+- OAuth: ✅ Complete (60-day tokens)
+- Dry-run: ✅ Generates formatted posts
+- Live posting: ⏳ Requires Standard Tier approval
+- Organization: 108297743 (https://www.linkedin.com/company/108297743/)
 
 ### Next Steps
 

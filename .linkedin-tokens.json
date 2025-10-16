@@ -1,0 +1,10 @@
+{
+  "access_token": "AQVj_9BBXKPt4_2hJ6mZOS0ci447Czbuao4ylXE5gE6G1k8JkB58svQnSIo3guZEdVgisAmaJhft8E1HiuikCSBZEZrzUt8rbXEGahoZtrl-SEIoZ361RupUxrHBfwnbzGxztG-fZeyauYW4NZYJdpjYyNpNbL1rgZHfwzWQ8OVbHoACGQeEyifbdnG4Nd6D4JijRTZNZrF8dPx1rsrwJeAn3XBhuzo_giKh85fuugtTtsBB4h9uyCI354UBxRLrq2MRc4o9P_8Yo1-Omcpr_Dj4NtW8JSQ9aIwcofu9Gkju3AN9JYrhCMW5TlN_gA1rV6iMYb2hx2-muxXtGU2_-LhhRUTmDw",
+  "expires_in": 5183999,
+  "refresh_token": "AQVDl042fH6ZepOSbUJD61pr8yelvQyuxffe8jYsWeOVeArcSEug0VDiTLkdhHTzK34sDickaV5WeWU2NaloAN66mZ3RDcFN_wj0aSIaoKndm3nyQW__hzKHMkacfcolE0VjZzwub2buvHXA2QeCAlZlWn1Nx857meS5q7wkmn6VecsM_fvvb6BD-Qz2cpyzg046BW2SUCC0t39iWc71KAdpVdBJ-ZrZzE-ma4eIUOrx5Xnd1j6Nc8aHGhy_PZHLzd83Vp352f_tUkflBiGq2RdUIpenm2kCy7NRwbbYBEsJI6KvWdnJ3vYdlMKuMQOatqZT8nNKlpQRIssW7oAv33E4xUiBRQ",
+  "refresh_token_expires_in": 31536059,
+  "scope": "r_organization_social_feed,w_organization_social_feed",
+  "note": "Community Management API - Use organization pages for posting",
+  "timestamp": 1760616649614,
+  "expiresAt": 1765800648614
+}

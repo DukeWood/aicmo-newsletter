@@ -1,28 +1,6 @@
 {
-  "twitter": [
-    {
-      "text": "🚀 New from aiCMO:\n\n\"Discovery Has Moved. Have You?\"\n\nBut ChatGPT only cites 2-7 companies per answer. Here's how to be one of them.\n\n🧵 Key insights below 👇",
-      "mediaUrls": [],
-      "status": "pending_mcp_integration",
-      "timestamp": "2025-10-12T21:49:10.726Z"
-    },
-    {
-      "text": "📊 TL;DR:\n\n71% of Americans now use AI to research brands - but ChatGPT only cites 2-7 companies per answer. Traditional SEO is declining while AI-powered discovery is exploding (70% growth in just 6 months). GEO (Generative Engine Optimization) is th",
-      "mediaUrls": [],
-      "status": "pending_mcp_integration",
-      "timestamp": "2025-10-12T21:49:12.733Z"
-    },
-    {
-      "text": "📈 Key data:\n\n1. 400 million+ weekly active users\n2. 91% of AI users default to their favorite tool\n3. Google AI Overviews now appear in 13-16% of all searches",
-      "mediaUrls": [],
-      "status": "pending_mcp_integration",
-      "timestamp": "2025-10-12T21:49:14.733Z"
-    },
-    {
-      "text": "Want the full breakdown?\n\n✉️ Read the complete newsletter:\nhttps://ai.cmo.so/newsletter/issue-1\n\n💡 Subscribe: https://ai.cmo.so/subscribe",
-      "mediaUrls": [],
-      "status": "pending_mcp_integration",
-      "timestamp": "2025-10-12T21:49:16.735Z"
-    }
-  ]
+  "linkedin": {
+    "status": "dry_run",
+    "post": "📰 New from aiCMO: Discovery Has Moved. Have You?\n\n71% of Americans now use AI to research brands - but ChatGPT only cites 2-7 companies per answer. Traditional SEO is declining while AI-powered discovery is exploding (70% growth in just 6 months). GEO (Generative Engine Optimization) is the new standard for visibility. The good news? It levels the playing field. Challenger brands can compete on relevance, not budget. Here's what you need to know.\n\n\n📊 Key insights:\n• 400 million+ weekly active users\n• 91% of AI users default to their favorite tool\n• Google AI Overviews now appear in 13-16% of all searches\n• ChatGPT citations increased 800% year-over-year\n\nThis is part of our weekly newsletter series on AI-first marketing strategies for challenger brands.\n\nRead the full issue: https://ai.cmo.so/newsletter/issue-1\n\n#AIMarketing #GEO #MarketingStrategy #AIFirst"
+  }
 }

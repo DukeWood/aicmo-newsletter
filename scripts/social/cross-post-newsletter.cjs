@@ -9,7 +9,8 @@
 require('dotenv').config();
 const fs = require('fs').promises;
 const yaml = require('yaml-front-matter');
-const { postTweet, postThread } = require('./post-to-twitter.js');
+const { postTweet, postThread } = require('./post-to-twitter.cjs');
+const { postText: postToLinkedIn } = require('./post-to-linkedin.cjs');
 
 /**
  * Parse newsletter file and extract key content
@@ -167,10 +168,14 @@ async function crossPost(newsletterPath, options = {}) {
       console.log(`(${linkedinPost.length} characters)`);
 
       if (!dryRun) {
-        console.log('\n📤 Posting to LinkedIn...');
-        console.log('⚠️  NOTE: LinkedIn posting requires MCP server integration');
-        console.log('   See SOCIAL_MEDIA_SETUP.md for configuration');
-        results.linkedin = { status: 'pending_mcp_integration', post: linkedinPost };
+        try {
+          console.log('\n📤 Posting to LinkedIn...');
+          results.linkedin = await postToLinkedIn(linkedinPost);
+        } catch (error) {
+          console.log(`\n⚠️  LinkedIn posting failed: ${error.message}`);
+          console.log('   Tip: Authenticate first with: node scripts/social/linkedin-oauth.js');
+          results.linkedin = { status: 'error', error: error.message, post: linkedinPost };
+        }
       } else {
         console.log('\n⏸️  Dry run - skipping actual post');
         results.linkedin = { status: 'dry_run', post: linkedinPost };
