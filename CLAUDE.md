@@ -126,7 +126,8 @@ The `knowledge_base/` directory contains structured information that all agents 
 
 ### Brand Knowledge (`knowledge_base/brand/`)
 - **[brand-overview.md](knowledge_base/brand/brand-overview.md)**: Brand identity, mission, vision, values, voice/tone, target audience, messaging pillars
-- **[products-services.md](knowledge_base/brand/products-services.md)**: Product catalog, pricing strategy, unique value propositions
+- **[products-services.md](knowledge_base/brand/products-services.md)**: Product catalog, pricing strategy (updated with single-plan model), unique value propositions
+- **[founding-member-benefits.md](knowledge_base/brand/founding-member-benefits.md)**: Complete founding member program details, benefits, rules, and FAQs
 - **[competition-landscape.md](knowledge_base/brand/competition-landscape.md)**: Competitive intelligence, market positioning, differentiation strategies (optimized for agent consumption)
 
 ### Events & Campaigns (`knowledge_base/events/`)
@@ -1035,4 +1036,133 @@ node scripts/canva/canva-oauth.js
 - **API Status:** https://status.canva.com
 - **Integration Guide:** `docs/CANVA_INTEGRATION_GUIDE.md`
 - **Quick Reference:** `docs/CANVA_QUICK_REFERENCE.md`
-- add to memorize for this new initatives and keep the previous features works
+
+---
+
+## Pricing Strategy & Launch Plan
+
+This repository includes a complete single-plan pricing strategy optimized for pre-PMF early adopter acquisition and category creation (GEO).
+
+### Strategy Overview
+
+**Location:** `Single_Plan_Pricing/`
+
+The pricing strategy represents a shift from complex multi-tier pricing to a simplified 2-tier model designed to:
+- Accelerate product-market fit validation (500 customers in 12 months)
+- Build GEO category awareness through volume over revenue
+- Create a community of 500 founding member evangelists
+- Enable rapid iteration with minimal pricing complexity
+
+### Core Pricing Model
+
+**Free Tier (Catalyst):**
+- £0 forever
+- 10 GEO + SEO articles/month
+- 1 brand voice
+- Manual publishing
+- Community support
+
+**Autopilot (Single Paid Plan):**
+- £49/month | £39/month (annual)
+- 50 articles + 100 posts + 2 newsletters/month
+- Autopilot publishing
+- 1 website embed
+- Email support (48h)
+- Early access to new features
+
+**Founding Member Program:**
+- First 500 customers: £39/month locked forever
+- 9 exclusive benefits (Slack, AMAs, logo wall, 50% off add-ons, etc.)
+- After 500 spots: new customers pay £79/month
+- Remaining: 347 of 500 spots (as of October 2025)
+
+### Key Documents
+
+**Strategic Planning:**
+- **[00_PRICING_STRATEGY_ANALYSIS.md](Single_Plan_Pricing/00_PRICING_STRATEGY_ANALYSIS.md)** - Complete rationale, revenue projections, PMF metrics, risk analysis
+- **[START_HERE.md](Single_Plan_Pricing/START_HERE.md)** - Day 1 action plan for founders
+- **[README.md](Single_Plan_Pricing/README.md)** - Package overview and implementation roadmap
+- **[EXECUTION_ROADMAP.md](Single_Plan_Pricing/EXECUTION_ROADMAP.md)** - 7-week launch plan with weekly milestones
+
+**Design & UX:**
+- **[pricing-wireframe.md](Single_Plan_Pricing/customer-wireframes/01-pricing-page/pricing-wireframe.md)** - Desktop + mobile pricing page layouts
+- **[benefits-page-wireframe.md](Single_Plan_Pricing/customer-wireframes/02-founding-member-benefits/benefits-page-wireframe.md)** - Founding member benefits page design
+- **Onboarding flow** (5-minute completion target)
+- **Dashboard calendar** (content scheduling UI)
+- **User flows** (sign-up to first publish)
+
+**Go-to-Market:**
+- **Content calendar** (90-day founder-led strategy)
+- **Messaging templates** (Twitter threads, LinkedIn posts, blog posts)
+- **Launch assets** (Product Hunt, Indie Hackers, Reddit)
+
+### Implementation Status
+
+**Completed:**
+- ✅ Complete pricing strategy analysis
+- ✅ Pricing page wireframes (desktop + mobile)
+- ✅ Founding member benefits page design
+- ✅ 5-minute onboarding flow specs
+- ✅ 90-day content calendar & templates
+- ✅ Knowledge base updated with new pricing
+- ✅ Founding member benefits documentation
+
+**Next Steps:**
+1. **Design Phase (Weeks 1-2):**
+   - Create high-fidelity Figma mockups
+   - Build design system (colors, typography, components)
+   - Prototype countdown timer and animations
+
+2. **Development Phase (Weeks 3-6):**
+   - Build pricing page (responsive)
+   - Implement founding member benefits page
+   - Create 5-step onboarding flow
+   - Integrate article generation (GPT-4)
+   - Add WordPress plugin connection
+   - Build real-time countdown timer
+
+3. **Content Phase (Weeks 1-6+):**
+   - Write 10 pre-launch Twitter threads
+   - Publish 3 SEO blog posts
+   - Build waitlist landing page
+   - Prepare Product Hunt launch
+
+4. **Launch (Week 7):**
+   - Product Hunt launch
+   - Email waitlist → convert to founding members
+   - Execute 90-day content calendar
+
+### Success Metrics
+
+**North Star:** 500 paying founding members by Month 12
+
+**Key Milestones:**
+- Month 1: 50 members, £2,450 MRR
+- Month 3: 150 members, £7,350 MRR
+- Month 6: 300 members, £14,700 MRR
+- Month 12: 500 members, £24,500 MRR (£294K ARR)
+
+**Activation Metrics:**
+- Onboarding completion: >60%
+- Time to first publish: <10 minutes
+- First article published: >40% within 24 hours
+
+**Content Metrics:**
+- Twitter followers: +500/month
+- Blog traffic: 5,000 visits/month by Month 3
+- Email subscribers: 1,000 by Month 3
+- Conversion rate: 5%+ (visitor to trial)
+
+### Knowledge Base Integration
+
+All agents should reference the updated pricing and founding member information when:
+- Creating marketing content (Sophie, Chris, Brenda)
+- Answering customer questions (all agents)
+- Planning campaigns (Maggie, Grace)
+- Writing newsletters (Emily)
+
+**Key Files:**
+- `knowledge_base/brand/products-services.md` - Updated with single-plan pricing
+- `knowledge_base/brand/founding-member-benefits.md` - Complete benefit details
+
+---
