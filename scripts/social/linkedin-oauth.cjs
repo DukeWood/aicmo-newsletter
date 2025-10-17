@@ -13,8 +13,8 @@ const crypto = require('crypto');
 const fs = require('fs').promises;
 
 // LinkedIn OAuth Configuration
-const LINKEDIN_CLIENT_ID = process.env.LINKEDIN_CLIENT_ID || 'your_client_id_here';
-const LINKEDIN_CLIENT_SECRET = process.env.LINKEDIN_CLIENT_SECRET || 'your_client_secret_here';
+const LINKEDIN_CLIENT_ID = process.env.LINKEDIN_CLIENT_ID;
+const LINKEDIN_CLIENT_SECRET = process.env.LINKEDIN_CLIENT_SECRET;
 const REDIRECT_URI = process.env.LINKEDIN_REDIRECT_URI || 'http://localhost:3001/oauth/redirect';
 // Community Management API scopes (new scopes as of June 2023)
 // Note: Community Management API only provides organization scopes, not openid/profile
