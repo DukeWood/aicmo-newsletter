@@ -1035,3 +1035,4 @@ node scripts/canva/canva-oauth.js
 - **API Status:** https://status.canva.com
 - **Integration Guide:** `docs/CANVA_INTEGRATION_GUIDE.md`
 - **Quick Reference:** `docs/CANVA_QUICK_REFERENCE.md`
+- add to memorize for this new initatives and keep the previous features works
