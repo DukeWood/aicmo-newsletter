@@ -511,7 +511,89 @@ node scripts/social/linkedin-oauth.cjs
 
 **Documentation:** See `docs/LINKEDIN_INTEGRATION_GUIDE.md` for complete setup guide
 
-#### 4. Cross-Posting Newsletters
+#### 4. LinkedIn Preview & Analytics Tools (Development Tier Features)
+
+Since Development Tier allows reading but not posting, we've built comprehensive preview and analytics tools:
+
+**Visual Post Preview:**
+```bash
+# Preview any post with formatting validation
+node scripts/social/linkedin-preview.cjs preview "Your post text here"
+
+# Preview from JSON file
+node scripts/social/linkedin-preview.cjs file campaigns/weekly-newsletter/issue-01/issue-01-newsletter-social-posts.json
+
+# Compare two posts side-by-side
+node scripts/social/linkedin-preview.cjs compare "Post A" "Post B"
+```
+
+**Read Organization Posts:**
+```bash
+# List recent posts
+node scripts/social/linkedin-read-posts.cjs list --count 20
+
+# Export posts to JSON
+node scripts/social/linkedin-read-posts.cjs export posts.json --count 50
+
+# Search posts by keyword
+node scripts/social/linkedin-read-posts.cjs search "marketing" --count 30
+
+# Get summary statistics
+node scripts/social/linkedin-read-posts.cjs summary
+```
+
+**Analytics Dashboard:**
+```bash
+# View 30-day analytics
+node scripts/social/linkedin-analytics.cjs dashboard --days 30
+
+# Export analytics to JSON
+node scripts/social/linkedin-analytics.cjs export analytics.json --days 90
+
+# Compare performance across periods
+node scripts/social/linkedin-analytics.cjs compare --period1 7 --period2 30
+```
+
+**Preview Features:**
+- ✅ Visual LinkedIn UI simulation in terminal
+- ✅ Character count validation (871/3000)
+- ✅ Hashtag analysis and recommendations
+- ✅ Emoji usage validation
+- ✅ URL detection and warnings
+- ✅ Optimal length suggestions (800-1200 chars)
+- ✅ Engagement optimization tips
+
+**Analytics Features:**
+- ✅ Post engagement metrics (likes, comments, shares)
+- ✅ Top performing posts ranking
+- ✅ Hashtag frequency analysis
+- ✅ Posting frequency tracking
+- ✅ Content type analysis (media vs text)
+- ✅ Performance comparison across time periods
+- ✅ Automated recommendations
+
+**Example Preview Output:**
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║ LinkedIn Post Preview                                                 ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ aiCMO (Organization)                                        • Public ║
+║ Preview                                                              ║
+║                                                                      ║
+║ 📰 New from aiCMO: Discovery Has Moved. Have You?                    ║
+║                                                                      ║
+║ 71% of Americans now use AI to research brands...                    ║
+║                                                                      ║
+║ #AIMarketing #GEO #MarketingStrategy #AIFirst                        ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ 📊 871/3000 characters | 4 hashtags | 1 links | 2 emojis            ║
+║ ✅ Optimal length (800-1200 chars)                                    ║
+║ ✅ Professional emoji usage                                        ║
+║ ✅ Good hashtag count (3-5)                                         ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
+
+#### 5. Cross-Posting Newsletters
 
 **Preview Posts (Dry Run):**
 ```bash
@@ -542,8 +624,9 @@ node scripts/social/cross-post-newsletter.cjs campaigns/weekly-newsletter/issue-
   - Tweet 4: CTA with newsletter link
 - Generates LinkedIn post (professional format)
 - Saves results to JSON file
+- **LinkedIn posts now include enhanced visual preview** with formatting validation
 
-#### 4. Direct Twitter Posting (Recommended)
+#### 6. Direct Twitter Posting (Recommended)
 
 **Quick Single Tweet (Easiest):**
 ```bash
@@ -603,7 +686,7 @@ node scripts/social/tweet.js "Test post from aiCMO! 🚀 #AIMarketing"
 🎉 Thread posted successfully!
 ```
 
-#### 5. Legacy MCP-Based Posting
+#### 7. Legacy MCP-Based Posting
 
 **Post Single Tweet (via MCP):**
 ```bash

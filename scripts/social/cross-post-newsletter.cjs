@@ -11,6 +11,7 @@ const fs = require('fs').promises;
 const yaml = require('yaml-front-matter');
 const { postTweet, postThread } = require('./post-to-twitter.cjs');
 const { postText: postToLinkedIn } = require('./post-to-linkedin.cjs');
+const { generatePreview } = require('./linkedin-preview.cjs');
 
 /**
  * Parse newsletter file and extract key content
@@ -163,9 +164,14 @@ async function crossPost(newsletterPath, options = {}) {
       console.log('\n\n💼 LINKEDIN:\n');
       const linkedinPost = generateLinkedInPost(newsletter);
 
-      console.log('Preview of LinkedIn post:');
-      console.log(`\n"${linkedinPost}"\n`);
-      console.log(`(${linkedinPost.length} characters)`);
+      // Use enhanced preview tool
+      console.log('');
+      generatePreview(linkedinPost, {
+        author: 'aiCMO',
+        authorType: 'Organization',
+        timeAgo: 'Preview',
+        visibility: 'Public'
+      });
 
       if (!dryRun) {
         try {
