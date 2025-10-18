@@ -1,0 +1,56 @@
+name: Agent Improvement
+description: Suggest improvements to AI agent behavior or capabilities
+title: "[AGENT] "
+labels: ["agent", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest improvements to one of the AI marketing agents (Maggie, Mark, Chris, Brenda, Peter, Grace, Emily, or Sophie).
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent
+      description: Which agent needs improvement?
+      options:
+        - Maggie (aiCMO - Orchestrator)
+        - Mark (Market Researcher)
+        - Chris (Content Strategist)
+        - Brenda (Brand Strategist)
+        - Peter (Performance Analyst)
+        - Grace (Growth Hacker)
+        - Emily (Email Marketer)
+        - Sophie (Social Media Manager)
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: How does the agent currently behave?
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-behavior
+    attributes:
+      label: Desired Behavior
+      description: How should the agent behave instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: What specific marketing task or scenario would this improvement help with?
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Provide examples of desired output or behavior

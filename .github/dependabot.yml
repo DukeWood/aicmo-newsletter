@@ -1,0 +1,42 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "automated"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      # Group all development dependencies together
+      development-dependencies:
+        dependency-type: "development"
+      # Group production dependencies by type
+      mailchimp-dependencies:
+        patterns:
+          - "@mailchimp/*"
+      cloudinary-dependencies:
+        patterns:
+          - "cloudinary*"
+      twitter-dependencies:
+        patterns:
+          - "twitter*"
+          - "*oauth*"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "github-actions"
+      - "automated"
+    commit-message:
+      prefix: "ci"

@@ -1,0 +1,75 @@
+name: Campaign Idea
+description: Propose a new marketing campaign or content series
+title: "[CAMPAIGN] "
+labels: ["campaign", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose a new marketing campaign or content series for aiCMO.
+
+  - type: dropdown
+    id: campaign-type
+    attributes:
+      label: Campaign Type
+      description: What type of campaign is this?
+      options:
+        - Newsletter series
+        - Social media campaign
+        - Product launch
+        - Event promotion
+        - Educational content series
+        - Growth experiment
+        - Brand awareness
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Campaign Objective
+      description: What is the goal of this campaign?
+      placeholder: "e.g., Generate 500 newsletter signups, drive 1000 website visits, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: target-audience
+    attributes:
+      label: Target Audience
+      description: Who is this campaign for?
+      placeholder: "e.g., Founders, marketers, consultants, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: content-plan
+    attributes:
+      label: Content Plan
+      description: What content will be created?
+      placeholder: |
+        - Newsletter Issue #1: Topic
+        - Twitter thread: Topic
+        - LinkedIn post: Topic
+    validations:
+      required: true
+
+  - type: textarea
+    id: channels
+    attributes:
+      label: Distribution Channels
+      description: Where will this campaign be distributed?
+      placeholder: "e.g., Email, Twitter, LinkedIn, Blog, etc."
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline
+      description: When should this campaign run?
+
+  - type: textarea
+    id: kpis
+    attributes:
+      label: Success Metrics
+      description: How will we measure success?
