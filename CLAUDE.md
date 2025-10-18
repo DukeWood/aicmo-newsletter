@@ -1087,7 +1087,8 @@ The pricing strategy represents a shift from complex multi-tier pricing to a sim
 **Design & UX:**
 - **[pricing-wireframe.md](Single_Plan_Pricing/customer-wireframes/01-pricing-page/pricing-wireframe.md)** - Desktop + mobile pricing page layouts
 - **[benefits-page-wireframe.md](Single_Plan_Pricing/customer-wireframes/02-founding-member-benefits/benefits-page-wireframe.md)** - Founding member benefits page design
-- **Onboarding flow** (5-minute completion target)
+- **[03_ONBOARDING_FLOW_AUTOPILOT.md](Single_Plan_Pricing/wireframes/03_ONBOARDING_FLOW_AUTOPILOT.md)** - Autopilot onboarding flow (<5 minute completion)
+- **[04_DASHBOARD_ADVANCED_SETTINGS.md](Single_Plan_Pricing/wireframes/04_DASHBOARD_ADVANCED_SETTINGS.md)** - Dashboard advanced settings (domain claim, brand voice)
 - **Dashboard calendar** (content scheduling UI)
 - **User flows** (sign-up to first publish)
 
@@ -1102,7 +1103,8 @@ The pricing strategy represents a shift from complex multi-tier pricing to a sim
 - ✅ Complete pricing strategy analysis
 - ✅ Pricing page wireframes (desktop + mobile)
 - ✅ Founding member benefits page design
-- ✅ 5-minute onboarding flow specs
+- ✅ Autopilot onboarding flow specs (<5 min, domain-only input)
+- ✅ Dashboard advanced settings wireframes (domain claim, brand voice)
 - ✅ 90-day content calendar & templates
 - ✅ Knowledge base updated with new pricing
 - ✅ Founding member benefits documentation
@@ -1116,9 +1118,10 @@ The pricing strategy represents a shift from complex multi-tier pricing to a sim
 2. **Development Phase (Weeks 3-6):**
    - Build pricing page (responsive)
    - Implement founding member benefits page
-   - Create 5-step onboarding flow
-   - Integrate article generation (GPT-4)
-   - Add WordPress plugin connection
+   - Create autopilot onboarding flow (domain input → auto-processing → results)
+   - Implement website data extraction and market research automation
+   - Integrate article generation (GPT-4) with auto-fill from extracted data
+   - Build dashboard advanced settings (domain claim, brand voice configuration)
    - Build real-time countdown timer
 
 3. **Content Phase (Weeks 1-6+):**
@@ -1143,9 +1146,11 @@ The pricing strategy represents a shift from complex multi-tier pricing to a sim
 - Month 12: 500 members, £24,500 MRR (£294K ARR)
 
 **Activation Metrics:**
-- Onboarding completion: >60%
+- Onboarding completion: >80% (autopilot flow, minimal user input)
+- Time to complete onboarding: <5 minutes
 - Time to first publish: <10 minutes
 - First article published: >40% within 24 hours
+- Domain claim completion: >50% within 7 days
 
 **Content Metrics:**
 - Twitter followers: +500/month
