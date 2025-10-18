@@ -10,19 +10,19 @@
 
 The Founding Member Program rewards the first 500 customers who believe in aiCMO's vision of making Generative Engine Optimization (GEO) the future of digital marketing.
 
-**Core Promise:** Lock in £39/month forever, even when prices increase to £79/month for new customers.
+**Core Promise:** Lock in £9.9/month forever, even when regular price is £18.8/month for new customers.
 
 ---
 
 ## Exclusive Benefits
 
-### 1. Lifetime Price Lock (£39/month Forever)
+### 1. Lifetime Price Lock (£9.9/month Forever)
 
 **What It Means:**
-- Your monthly subscription stays at £39/month for as long as you remain a customer
-- When new customers pay £79/month (after 500 spots filled), you keep paying £39
-- Applies to both monthly and annual billing (£468/year vs £948/year for new customers)
-- **Lifetime savings:** £40/month × 12 months = £480/year savings
+- Your monthly subscription stays at £9.9/month for as long as you remain a customer
+- When new customers pay £18.8/month (standard price), you keep paying £9.9
+- Applies to both monthly and annual billing (£118.8/year vs £225.6/year for new customers)
+- **Lifetime savings:** £8.9/month × 12 months = £106.8/year savings
 
 **Conditions:**
 - Valid until January 1, 2029 minimum (4+ years locked in)
@@ -164,7 +164,7 @@ The Founding Member Program rewards the first 500 customers who believe in aiCMO
 
 1. Visit [aiCMO.co/pricing](https://aicmo.co/pricing)
 2. Click "Claim Your Spot" on Founding Member banner
-3. Choose monthly (£39/month) or annual (£468/year = £39/month)
+3. Choose monthly (£9.9/month) or annual (£118.8/year = £9.9/month)
 4. Enter payment details (Stripe secure checkout)
 
 **Confirmation:** You'll see "🎁 FOUNDING MEMBER" badge on your account immediately.
@@ -242,13 +242,13 @@ The Founding Member Program rewards the first 500 customers who believe in aiCMO
 - Continues indefinitely if you remain subscribed beyond 2029
 
 **Price Increases:**
-- New customers after 500 spots: £79/month
-- Founding members: Stay at £39/month forever
+- New customers after 500 spots: £18.8/month
+- Founding members: Stay at £9.9/month forever
 
 **Billing Changes:**
-- Switch monthly ↔ annual anytime (keeps £39/month effective rate)
-- Annual: £468/year (£39/month × 12)
-- Monthly: £39/month
+- Switch monthly ↔ annual anytime (keeps £9.9/month effective rate)
+- Annual: £118.8/year (£9.9/month × 12)
+- Monthly: £9.9/month
 
 ### Add-On Discounts
 
@@ -280,7 +280,7 @@ The Founding Member Program rewards the first 500 customers who believe in aiCMO
 ## FAQs
 
 **Q: What happens if I cancel and want to come back later?**
-A: You lose founding member status and pay new customer rates (£79/month). Price lock only applies to continuously active subscriptions.
+A: You lose founding member status and pay new customer rates (£18.8/month). Price lock only applies to continuously active subscriptions.
 
 **Q: Can I pause my subscription without losing benefits?**
 A: Yes, up to 30 days (vacation mode). Longer pauses forfeit founding member status.
@@ -294,8 +294,8 @@ A: Look for the "🎁 FOUNDING MEMBER" badge on your dashboard. Also check Slack
 **Q: Can I transfer my founding member benefits to another account?**
 A: No, benefits are non-transferable and tied to original account email.
 
-**Q: What if aiCMO raises prices above £79/month in 2-3 years?**
-A: You still pay £39/month forever. Price lock has no expiration (beyond Jan 1, 2029 minimum).
+**Q: What if aiCMO raises prices above £18.8/month in 2-3 years?**
+A: You still pay £9.9/month forever. Price lock has no expiration (beyond Jan 1, 2029 minimum).
 
 **Q: Do founding members get revenue share on referrals?**
 A: Not yet, but this is under consideration for 2025. You'll be first to know.

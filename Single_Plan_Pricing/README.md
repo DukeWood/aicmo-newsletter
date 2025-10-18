@@ -1,10 +1,10 @@
 # Single-Plan Pricing Package
 ## Complete Launch Strategy for Pre-PMF aiCMO
 
-**Version:** 1.0
-**Date:** 2025-10-16
+**Version:** 2.0
+**Date:** 2025-10-18
 **Status:** Ready for Implementation
-**Goal:** 500 founding members in 12 months @ £39/month locked forever
+**Goal:** 500 founding members in 9 months @ £9.9/month locked forever
 
 ---
 
@@ -138,10 +138,10 @@ This folder contains everything you need to launch aiCMO's simplified single-pla
 
 | Month | Founding Members | MRR | Key Milestone |
 |-------|------------------|-----|---------------|
-| 1 | 50 | £2,450 | Product Hunt launch |
-| 3 | 150 | £7,350 | Referral program launch |
-| 6 | 300 | £14,700 | First price increase (new customers) |
-| 12 | 500 | £24,500 | Founding member program closes |
+| 1 | 50 | £940 | Product Hunt launch |
+| 3 | 150 | £2,820 | Referral program launch |
+| 6 | 300 | £5,640 | Add-ons launch |
+| 9 | 500 | £9,400 | Founding member program closes |
 
 ### Activation Metrics (Onboarding)
 - **Completion rate:** >60% of sign-ups complete all 5 steps
@@ -166,12 +166,12 @@ This folder contains everything you need to launch aiCMO's simplified single-pla
 - **No credit card required**
 
 ### Autopilot (Single Paid Plan)
-- **Price:** £49/month | £39/month (annual)
-- **Founding Member:** £39/month locked forever (first 500 only)
+- **Price:** £18.8/month | £9.9/month (annual - save 50%)
+- **Founding Member:** £9.9/month locked forever (first 500 only)
 - **Features:** 50 articles + 100 posts + 2 newsletters/month, autopilot publishing, email support
 
 ### Founding Member Perks
-1. £39/month locked forever (even after price increases)
+1. £9.9/month locked forever (even after price increases)
 2. 50% off all future add-ons for life
 3. Private Slack with founders
 4. Logo on "Early Adopters" homepage wall
@@ -181,9 +181,9 @@ This folder contains everything you need to launch aiCMO's simplified single-pla
 8. Co-marketing opportunities
 
 ### After 500 Founding Members
-- **New customers:** £79/month (founding members keep £39)
+- **New customers:** £18.8/month (founding members keep £9.9)
 - **Add-ons:** Launch capacity boosters & feature add-ons
-- **Price validation:** Test willingness to pay at higher price point
+- **Price validation:** Validate mainstream pricing acceptance
 
 ---
 
@@ -247,7 +247,7 @@ This folder contains everything you need to launch aiCMO's simplified single-pla
 - [ ] Article generation working (5 articles in 30s)
 - [ ] WordPress plugin published (or download link)
 - [ ] Analytics tracking (PostHog events)
-- [ ] Stripe integration (£49/month, £39/month annual)
+- [ ] Stripe integration (£18.8/month, £9.9/month annual)
 
 ### Operations
 - [ ] Founding member Slack workspace created
@@ -272,21 +272,21 @@ This folder contains everything you need to launch aiCMO's simplified single-pla
 - **Flexibility:** Easy to pivot pricing post-PMF
 
 **Risks:**
-- Lower revenue short-term (but 6 months faster to PMF)
-- Founding members locked at £39 forever (acceptable trade-off)
+- Lower revenue short-term (but 3-6 months faster to PMF)
+- Founding members locked at £9.9 forever (acceptable trade-off for volume)
 
-### Why £49/month instead of £79?
+### Why £18.8/month (£9.9 annual)?
 
-**£49 = impulse buy threshold for B2B SaaS**
-- Below £50 = no CFO approval needed
-- Matches competitors (Jasper, Copy.ai)
-- Above commodity AI writers (£29-39)
-- Signals "early adopter pricing, get in now"
+**£18.8 = ultra-accessible for B2B SaaS**
+- Under £20 = impulse buy, no approval needed
+- 2.6x cheaper than competitors (Jasper, Copy.ai)
+- 6.3x cheaper than Semrush (£119)
+- Signals "revolutionary early adopter pricing, maximum accessibility"
 
 **After 500 founding members:**
-- Raise to £79/month for new customers
-- Founding members keep £39 forever
-- Validates willingness to pay higher price
+- Maintain £18.8/month for new customers
+- Founding members keep £9.9 forever (47% discount)
+- Revenue growth via add-ons and increased usage
 
 ### What if we don't hit 500 in 12 months?
 
