@@ -1063,7 +1063,7 @@ The pricing strategy represents a shift from complex multi-tier pricing to a sim
 - Community support
 
 **Autopilot (Single Paid Plan):**
-- £49/month | £39/month (annual)
+- £18.8/month | £9.9/month (annual - save 50%)
 - 50 articles + 100 posts + 2 newsletters/month
 - Autopilot publishing
 - 1 website embed
@@ -1071,9 +1071,9 @@ The pricing strategy represents a shift from complex multi-tier pricing to a sim
 - Early access to new features
 
 **Founding Member Program:**
-- First 500 customers: £39/month locked forever
+- First 500 customers: £9.9/month locked forever
 - 9 exclusive benefits (Slack, AMAs, logo wall, 50% off add-ons, etc.)
-- After 500 spots: new customers pay £79/month
+- After 500 spots: new customers pay £18.8/month
 - Remaining: 347 of 500 spots (as of October 2025)
 
 ### Key Documents

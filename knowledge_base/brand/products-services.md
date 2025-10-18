@@ -110,7 +110,7 @@ AI CMO uses a simplified 2-tier pricing structure designed to accelerate categor
 - **CTA:** No credit card required
 
 **AUTOPILOT (Single Paid Plan)**
-- **Price:** £49/month | £39/month (annual - save 20%)
+- **Price:** £18.8/month | £9.9/month (annual - save 50%)
 - **Ideal For:** Growing brands, solopreneurs, consultants, agencies
 - **Core Features:**
   - Everything in Free tier
@@ -126,10 +126,10 @@ AI CMO uses a simplified 2-tier pricing structure designed to accelerate categor
 
 ### Founding Member Program (First 500 Only)
 
-**🎁 FOUNDING MEMBER: £39/month Locked Forever**
+**🎁 FOUNDING MEMBER: £9.9/month Locked Forever**
 
 **Exclusive Benefits:**
-1. £39/month locked in FOREVER (even after price increases to £79)
+1. £9.9/month locked in FOREVER (even after price increases)
 2. 50% discount on all future add-ons for life
 3. Private Slack channel with founders
 4. Quarterly strategy calls (founder AMAs)
@@ -142,9 +142,9 @@ AI CMO uses a simplified 2-tier pricing structure designed to accelerate categor
 **Remaining:** 347 of 500 spots (updated October 2025)
 
 **After 500 Founding Members:**
-- New customers: £79/month
-- Founding members: Keep £39/month forever
-- Validates willingness to pay at higher price point
+- New customers: £18.8/month
+- Founding members: Keep £9.9/month forever
+- Validates willingness to pay at standard price point
 
 ### Add-Ons (Phase 2 - Month 6+)
 
@@ -168,17 +168,17 @@ AI CMO uses a simplified 2-tier pricing structure designed to accelerate categor
 - **Volume over revenue:** Fast feedback loops to validate product-market fit
 - **Low friction:** One decision (Free vs Autopilot) eliminates decision paralysis
 - **Community building:** Founding members become evangelists
-- **Category creation:** £49 price point accelerates GEO awareness (vs £79 premium)
+- **Category creation:** £18.8 price point accelerates GEO awareness and accessibility
 - **Flexibility to pivot:** Simple pricing allows rapid iteration post-PMF
 
 **Key Principles:**
 - Work Smarter, Not Harder: Achieve 3-5× output at 1/5 of freelancer costs
 - Pay for Impact, Not Complexity: Pricing reflects AI-driven visibility gains
 - Accessibility First: Free tier empowers next-gen founders to try GEO
-- Early Adopter Rewards: Founding members lock in £39 forever
+- Early Adopter Rewards: Founding members lock in £9.9 forever
 
 **Success Metrics:**
 - Target: 500 paying customers by Month 12
-- Revenue Goal: £24,500 MRR (£294K ARR) at end of Year 1
+- Revenue Goal: £9,400 MRR (£112.8K ARR) at end of Year 1
 - Retention: 70%+ for founding members (vs 50-60% industry standard)
 - Category Momentum: "GEO" becomes recognized marketing term
