@@ -10,7 +10,7 @@
 - Complete pricing strategy analysis
 - Pricing page wireframes (desktop + mobile)
 - Founding member benefits page design
-- 5-minute onboarding flow specs
+- Autopilot onboarding flow specs (<5 min, domain-only)
 - 90-day content calendar & templates
 - Execution roadmap (7 weeks to launch)
 

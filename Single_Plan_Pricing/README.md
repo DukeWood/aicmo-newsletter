@@ -32,9 +32,9 @@ This folder contains everything you need to launch aiCMO's simplified single-pla
    - Value calculator & ROI comparison
    - Activity feed & testimonials
 
-4. **[wireframes/03_ONBOARDING_FLOW_5_MINUTE.md](wireframes/03_ONBOARDING_FLOW_5_MINUTE.md)**
-   - 5-step onboarding optimized for <10 min completion
-   - Brand voice setup → generate articles → publish
+4. **[wireframes/03_ONBOARDING_FLOW_AUTOPILOT.md](wireframes/03_ONBOARDING_FLOW_AUTOPILOT.md)**
+   - Autopilot onboarding optimized for <5 min completion
+   - Domain input → auto-processing → brand report + 3 articles
    - Mobile adaptations & error handling
    - Activation metrics & success criteria
 
@@ -75,7 +75,8 @@ This folder contains everything you need to launch aiCMO's simplified single-pla
 **Your Deliverables:**
 - Pricing page (desktop + mobile) based on `01_PRICING_PAGE_WIREFRAMES.md`
 - Founding member benefits page based on `02_FOUNDING_MEMBER_BENEFITS_PAGE.md`
-- Onboarding flow (5 steps) based on `03_ONBOARDING_FLOW_5_MINUTE.md`
+- Autopilot onboarding flow based on `03_ONBOARDING_FLOW_AUTOPILOT.md`
+- Dashboard advanced settings based on `04_DASHBOARD_ADVANCED_SETTINGS.md`
 - Founding member badge/logo assets
 - Countdown timer UI
 - Progress bar components
@@ -92,9 +93,10 @@ This folder contains everything you need to launch aiCMO's simplified single-pla
 **Your Deliverables:**
 - Pricing page with monthly/yearly toggle
 - Real-time countdown timer (WebSocket or API polling)
-- Onboarding flow (5 steps, progress tracking)
-- Article generation backend (GPT-4 integration)
-- WordPress plugin connection
+- Autopilot onboarding flow (domain input → auto-processing → results)
+- Website data extraction and market research automation
+- Article generation backend (GPT-4 integration with auto-fill)
+- Dashboard advanced settings (domain claim, brand voice profiles)
 - Analytics instrumentation (PostHog)
 
 **Tech Stack (Recommended):**
@@ -358,7 +360,8 @@ You now have:
 ✅ Complete pricing strategy
 ✅ Pricing page wireframes (desktop + mobile)
 ✅ Founding member benefits page
-✅ 5-minute onboarding flow
+✅ Autopilot onboarding flow (<5 minutes, domain-only input)
+✅ Dashboard advanced settings (domain claim, brand voice)
 ✅ 90-day content calendar
 
 **Next step:** Execute! 🚀

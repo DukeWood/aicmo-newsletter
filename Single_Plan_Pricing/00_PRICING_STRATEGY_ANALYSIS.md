@@ -431,7 +431,7 @@ Assumptions:
 ### Phase 2: Dashboard Simplification (Week 3-4)
 
 **Deliverables:**
-- [ ] 5-minute onboarding flow (brand setup → first publish)
+- [ ] Autopilot onboarding flow (domain input → auto-processing → brand report + articles)
 - [ ] Usage tracking dashboard (23/50 articles this month)
 - [ ] Simple billing page (current plan, next charge, usage)
 - [ ] Remove Add-ons Store UI (delay until Month 6)
