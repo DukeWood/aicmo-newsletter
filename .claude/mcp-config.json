@@ -46,6 +46,13 @@
     "huggingface": {
       "type": "remote",
       "url": "https://huggingface.co/mcp?login"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@executeautomation/playwright-mcp-server"
+      ]
     }
   }
 }
