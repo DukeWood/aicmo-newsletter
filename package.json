@@ -1,7 +1,7 @@
 {
-  "name": "aicmo-newsletter-automation",
+  "name": "aicmo-growth-automation",
   "version": "1.0.0",
-  "description": "AI-powered newsletter automation system for aiCMO using Mailchimp API",
+  "description": "AI-powered growth marketing automation system for aiCMO with founding member acquisition",
   "type": "module",
   "main": "scripts/newsletter/orchestrate.js",
   "scripts": {
@@ -17,11 +17,15 @@
     "oauth:local": "node scripts/canva/canva-oauth.js"
   },
   "keywords": [
+    "growth-marketing",
+    "founding-member-program",
     "newsletter",
     "mailchimp",
     "mcp",
     "automation",
-    "ai-marketing"
+    "ai-marketing",
+    "acquisition",
+    "retention"
   ],
   "author": "aiCMO Team",
   "license": "MIT",

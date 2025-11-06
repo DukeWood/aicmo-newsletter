@@ -1,18 +1,19 @@
-# aiCMO Marketing System
+# aiCMO Growth System
 
-**AI-powered marketing orchestration system with specialized marketing agents**
+**AI-powered growth marketing orchestration with founding member acquisition**
 
-Built with Claude Code agent framework, this system provides a complete marketing automation suite led by Maggie, your AI Chief Marketing Officer (aiCMO).
+Built with Claude Code agent framework, this system provides a comprehensive growth marketing suite led by Maggie, your AI Chief Marketing Officer (aiCMO). The primary focus is acquiring 500 founding members through coordinated acquisition, retention, and event marketing campaigns.
 
 ---
 
 ## Features
 
-- **🤖 AI Marketing Orchestrator** - Maggie coordinates 7 specialized marketing agents
-- **📧 Newsletter Automation** - Generate, design, and send newsletters with Canva & Mailchimp
-- **📱 Social Media Management** - Automated posting to Twitter/X with images
-- **🎨 Design Integration** - Canva API for automated image generation and export
-- **📊 Performance Tracking** - Analytics via Google Analytics 4
+- **🚀 Growth Marketing Orchestration** - Maggie coordinates 7 specialized marketing agents for growth
+- **👥 Founding Member Program** - Complete strategy for acquiring 500 founding members at £39/month
+- **📧 Newsletter Automation** - Generate, design, and send retention-focused newsletters
+- **📱 Social Media Management** - Automated posting to Twitter/X and LinkedIn for acquisition
+- **🎨 Design Integration** - Canva API for automated campaign asset generation
+- **📊 Performance Tracking** - Growth metrics, acquisition funnels, and ROI analysis
 - **☁️ CDN Integration** - Cloudinary for image hosting and optimization
 
 ---
@@ -24,10 +25,15 @@ Built with Claude Code agent framework, this system provides a complete marketin
 - **[Canva Quick Reference](docs/CANVA_QUICK_REFERENCE.md)** - One-page cheat sheet
 - **[CLAUDE.md](CLAUDE.md)** - Agent system architecture and usage
 
+### Campaigns
+- **Founding Member Acquisition** - See `campaigns/acquisition/founding-member-program/`
+- **Newsletter (Retention)** - See `campaigns/retention/weekly-newsletter/`
+- **Event Marketing** - See `campaigns/events/`
+
 ### Workflows
-- **Newsletter Automation** - See `campaigns/weekly-newsletter/`
 - **Social Media** - See `scripts/social/`
 - **Image Generation** - See `scripts/canva/`
+- **Newsletter Automation** - See `scripts/newsletter/`
 
 ---
 
@@ -146,12 +152,18 @@ node scripts/social/post-tweet-with-image.js "Post 3" ./temp/DAG003.png
 ## Repository Structure
 
 ```
-aiCMO_newsletter/
+aiCMO_Growth/
 ├── .claude/
 │   ├── agents/              # 8 specialized marketing agents
 │   └── mcp-config.json      # MCP server configuration
 ├── campaigns/
-│   └── weekly-newsletter/   # Newsletter content & assets
+│   ├── acquisition/         # Growth & acquisition campaigns
+│   │   └── founding-member-program/  # 500-member acquisition strategy
+│   ├── retention/           # Engagement & retention campaigns
+│   │   └── weekly-newsletter/        # Newsletter content & assets
+│   ├── events/              # Event marketing campaigns
+│   │   └── ldf25-post-event/         # Leeds Digital Festival
+│   └── nov-2025-launch/     # Product launch campaign
 ├── docs/
 │   ├── CANVA_INTEGRATION_GUIDE.md    # Canva full guide
 │   ├── CANVA_QUICK_REFERENCE.md      # Canva cheat sheet

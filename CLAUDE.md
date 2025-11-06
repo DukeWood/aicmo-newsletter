@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**aicmo_cc** is a marketing orchestration system built on Claude Code's agent framework. It provides a team of specialized AI marketing agents coordinated by Maggie, an AI Chief Marketing Orchestrator (aiCMO).
+**aiCMO_Growth** is a growth marketing orchestration system built on Claude Code's agent framework. It provides a team of specialized AI marketing agents coordinated by Maggie, an AI Chief Marketing Orchestrator (aiCMO).
+
+**Primary Mission:** Acquire 500 founding members at £39/month through coordinated acquisition, retention, and event marketing campaigns.
 
 ## Agent Architecture
 
@@ -141,7 +143,7 @@ The `knowledge_base/` directory contains structured information that all agents 
 ## Repository Structure
 
 ```
-aicmo_cc/
+aiCMO_Growth/
 ├── .claude/
 │   └── agents/              # Agent definitions (8 agents)
 │       ├── maggie-ai-cmo.md           # Orchestrator
@@ -149,28 +151,40 @@ aicmo_cc/
 │       ├── content-strategist.md      # Chris
 │       ├── brand-strategist.md        # Brenda
 │       ├── performance-analyst.md     # Peter
-│       ├── growth-hacker.md           # Grace
+│       ├── growth-hacker.md           # Grace (KEY for founding member acquisition)
 │       ├── email-marketer.md          # Emily
 │       └── social-media-manager.md    # Sophie
-├── campaigns/               # Campaign content and newsletters
-│   └── weekly-newsletter/  # Weekly GEO newsletter series
-│       └── issue-01/       # Newsletter Issue #1
-│           ├── issue-01-newsletter.md     # Main newsletter content
-│           ├── assets/                    # Newsletter images
-│           ├── IMAGE_GENERATION_PROMPTS.md
-│           └── DESIGN_ASSETS_NEEDED.md
+├── campaigns/               # Organized by campaign type
+│   ├── acquisition/        # Growth & acquisition campaigns
+│   │   └── founding-member-program/  # PRIMARY: 500-member acquisition strategy
+│   │       ├── strategy/               # Pricing strategy & analysis
+│   │       ├── wireframes/             # UX/UI specifications
+│   │       ├── customer-wireframes/    # Customer-facing designs
+│   │       └── messaging/              # 90-day GTM content calendar
+│   ├── retention/          # Engagement & retention campaigns
+│   │   └── weekly-newsletter/  # Weekly GEO newsletter series
+│   │       └── issue-01/       # Newsletter Issue #1
+│   │           ├── issue-01-newsletter.md     # Main newsletter content
+│   │           ├── assets/                    # Newsletter images
+│   │           ├── IMAGE_GENERATION_PROMPTS.md
+│   │           └── DESIGN_ASSETS_NEEDED.md
+│   ├── events/             # Event marketing campaigns
+│   │   └── ldf25-post-event/  # Leeds Digital Festival 2025
+│   └── nov-2025-launch/    # Product launch campaign
 ├── knowledge_base/          # Structured brand/product information
 │   ├── brand/              # Brand guidelines and competitive intel
+│   │   ├── founding-member-benefits.md  # Complete founding member program
+│   │   └── products-services.md         # Single-plan pricing model
 │   ├── events/             # Event-specific content
-│   └── guidelines/         # Platform policies (to be populated)
+│   └── guidelines/         # Platform policies
 ├── scripts/                 # Automation scripts
-│   └── newsletter/         # Newsletter automation
-│       ├── send-test-email.js         # Send test emails via Mailchimp
-│       └── upload-to-cloudinary.js    # Upload images to Cloudinary CDN
+│   ├── newsletter/         # Newsletter automation
+│   ├── social/             # Social media posting (Twitter, LinkedIn)
+│   └── canva/              # Design export automation
 ├── .claude/
 │   ├── agents/             # Agent definitions
-│   └── mcp-config.json     # MCP server configuration (Mailchimp, Cloudinary, Twitter)
-├── .env                     # Environment variables (Mailchimp, Cloudinary, etc.)
+│   └── mcp-config.json     # MCP server configuration (Cloudinary, Twitter, Canva, HuggingFace, Playwright)
+├── .env                     # Environment variables (Mailchimp API, Cloudinary, Twitter, etc.)
 └── CLAUDE.md               # This file
 ```
 
@@ -339,18 +353,33 @@ The script:
 - Gmail-optimized image handling
 - Proper HTML structure for email clients
 
-#### 4. MCP Server Integration
+#### 4. Mailchimp API Integration
 
-**Configured MCP Servers:**
-- **Mailchimp** (`@bryangsmith/mailchimp-mcp-server`) - Email campaign management
+**Mailchimp via Direct API:**
+We use the `@mailchimp/mailchimp_marketing` npm package for direct API access (not MCP server).
+
+**Why Direct API:**
+- More reliable than MCP server
+- Better error handling
+- Full control over campaign settings
+- No dependency on MCP server availability
+
+**MCP Servers (for other services):**
 - **Cloudinary** (`@cloudinary/asset-management`) - Image hosting and optimization
+- **Twitter** (`@mbelinky/x-mcp-server`) - Social media posting
+- **Canva** (`@canva/cli`) - Design documentation
+- **HuggingFace** - AI models and datasets
+- **Playwright** - Browser automation
 
 **Configuration:** `.claude/mcp-config.json`
 ```json
 {
   "mcpServers": {
-    "mailchimp": { ... },
-    "cloudinary": { ... }
+    "cloudinary": { ... },
+    "twitter": { ... },
+    "canva": { ... },
+    "huggingface": { ... },
+    "playwright": { ... }
   }
 }
 ```
@@ -409,6 +438,27 @@ NEWSLETTER_REPLY_TO=maggie@aimarketing.so
 - Original images can be 1-2MB (quality matters)
 - Cloudinary automatically optimizes delivery to 50-200KB
 - Use `q_auto` and `f_auto` parameters for automatic optimization
+
+### Manual Newsletter Workflow Documentation
+
+For complete step-by-step instructions on manually creating and sending newsletters, see:
+
+**📖 [Manual Newsletter Workflow Guide](docs/MANUAL_NEWSLETTER_WORKFLOW.md)**
+
+This comprehensive guide covers:
+- Creating email-optimized HTML (table-based layouts)
+- Uploading images to Cloudinary CDN
+- Using Mailchimp API directly (not MCP)
+- Campaign creation and updates
+- Testing and sending
+- Common issues and solutions
+
+**Key Scripts:**
+- `scripts/newsletter/list-mailchimp-audiences.mjs` - List Mailchimp audiences
+- `scripts/newsletter/create-mailchimp-draft.mjs` - Create new campaign
+- `scripts/newsletter/update-mailchimp-campaign.mjs` - Update content only
+- `scripts/newsletter/update-mailchimp-sender.mjs` - Update sender + content
+- `scripts/newsletter/upload-newsletter-images.mjs` - Upload images to Cloudinary
 
 ---
 

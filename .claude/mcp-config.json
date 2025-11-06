@@ -1,15 +1,5 @@
 {
   "mcpServers": {
-    "mailchimp": {
-      "command": "npx",
-      "args": [
-        "@bryangsmith/mailchimp-mcp-server"
-      ],
-      "env": {
-        "MAILCHIMP_API_KEY": "${MAILCHIMP_API_KEY}",
-        "MAILCHIMP_SERVER_PREFIX": "${MAILCHIMP_SERVER_PREFIX}"
-      }
-    },
     "cloudinary": {
       "command": "npx",
       "args": [
