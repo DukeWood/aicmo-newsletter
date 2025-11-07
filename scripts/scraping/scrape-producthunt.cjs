@@ -1,29 +1,23 @@
-const { chromium } = require('playwright');
+const { firefox } = require('playwright');
 
 async function scrapeProductHunt() {
-  const browser = await chromium.launch({
-    headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu',
-      '--ignore-certificate-errors'
-    ]
+  const browser = await firefox.launch({
+    headless: true
   });
   const context = await browser.newContext({
-    ignoreHTTPSErrors: true,
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0'
   });
   const page = await context.newPage();
 
   try {
-    console.log('🚀 Navigating to Product Hunt...');
-    await page.goto('https://www.producthunt.com/', { waitUntil: 'networkidle' });
+    console.log('🚀 Navigating to Product Hunt with Firefox...');
+    await page.goto('https://www.producthunt.com/', {
+      waitUntil: 'domcontentloaded',
+      timeout: 30000
+    });
 
-    // Wait for products to load
-    await page.waitForSelector('[data-test="homepage-section-0"]', { timeout: 10000 });
-
+    // Wait for page to fully load
+    await page.waitForTimeout(3000);
     console.log('📊 Extracting today\'s launches...\n');
 
     // Extract today's products
