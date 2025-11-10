@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
-    "axios": "^1.13.1",
+    "axios": "^1.13.2",
     "cheerio": "^1.0.0-rc.12",
     "cloudinary": "^2.8.0",
     "date-fns": "^3.0.6",
